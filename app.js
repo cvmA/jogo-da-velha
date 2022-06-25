@@ -7,15 +7,15 @@ let hasWinner = false;
 
 let arrCells= ['','','','','','','','','',]
 
-atualizarMostrador()
+updatePlayer()
 
-function atualizarMostrador(){
+function updatePlayer(){
     if (hasWinner) {return}
     if (playTime === playerX ){
         let player = document.querySelector('div#mostrador span')
         player.innerHTML = 'X'
         player.style.color= '#3A2C50'
-    } else{
+    }else{
         let player = document.querySelector('div#mostrador span')
         player.innerHTML = 'O'
         player.style.color='#47A4AA'
@@ -37,11 +37,11 @@ function atualizarMostrador(){
             element.style.color='#47A4AA'
             playTime=playerX
         }        
-        atualizarMostrador()
-        mostrarVencedor()
-        verificarVencedor()
+        updatePlayer()
+        showWinner()
+        verifyWinner()
         if(hasWinner) {
-            atualizarVencedor()
+            updateWinner()
         }
         console.log(arrCells)
         console.log(hasWinner)
@@ -49,14 +49,14 @@ function atualizarMostrador(){
     }
         
  }
-        function mostrarVencedor(){
+        function showWinner(){
             if (element.innerHTML === 'X'){
             arrCells[i] = 'X'
         }else{
             arrCells[i] = 'O'
         }
  }
- function verificarVencedor(){
+ function verifyWinner(){
     if(arrCells[0] !== '' && arrCells[0] === arrCells[1] && arrCells[1] === arrCells[2]){
         hasWinner = true
     } else if (arrCells[0] !== '' && arrCells[0] === arrCells[3] && arrCells[3] === arrCells[6]) {
@@ -81,15 +81,15 @@ function atualizarMostrador(){
         hasWinner = false
     }
  }
-  function atualizarVencedor(){
+  function updateWinner(){
     if (playTime !== playerX ){
-        let vencedor = document.querySelector('div#vencedor span')
-        vencedor.innerHTML = 'X'
-        vencedor.style.color= '#3A2C50'
+        let winner = document.querySelector('div#vencedor span')
+        winner.innerHTML = 'X'
+        winner.style.color= '#3A2C50'
     } else{
-        let vencedor = document.querySelector('div#vencedor span')
-        vencedor.innerHTML = 'O'
-        vencedor.style.color='#47A4AA'
+        let winner = document.querySelector('div#vencedor span')
+        winner.innerHTML = 'O'
+        winner.style.color='#47A4AA'
     }
   }
      element.addEventListener('click', fillCells)
