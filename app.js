@@ -43,6 +43,8 @@ function updatePlayer(){
         if(hasWinner) {
             updateWinner()
         }
+        hidePlayer()
+        hasDraw()
         console.log(arrCells)
         console.log(hasWinner)
 
@@ -71,6 +73,9 @@ function updatePlayer(){
      else if (arrCells[2] !== '' && arrCells[2] === arrCells[5] && arrCells[5] === arrCells[8]) {
         hasWinner = true
      }
+     else if (arrCells[2] !== '' && arrCells[2] === arrCells[4] && arrCells[4] === arrCells[6]) {
+        hasWinner = true
+     }
      else if (arrCells[3] !== '' && arrCells[3] === arrCells[4] && arrCells[4] === arrCells[5]) {
         hasWinner = true
      }
@@ -91,7 +96,23 @@ function updatePlayer(){
         winner.innerHTML = 'O'
         winner.style.color='#47A4AA'
     }
+    
   }
+  function hidePlayer(){
+    if(hasWinner){
+        let playerHtml = document.querySelector('div#mostrador')
+        playerHtml.innerHTML = 'O jogo acabou!'
+    }
+}
+function hasDraw(){
+    if(arrCells[0] !== ''&& arrCells[1]!== '' && arrCells[2] !== '' && arrCells[3] !== '' && arrCells[4] !== '' && arrCells[5] !== '' && arrCells[6] !== '' && arrCells[7] !== '' && arrCells[8]!== '' && hasWinner === false){
+        let drawPlayer = document.querySelector('div#vencedor')
+        drawPlayer.innerHTML = 'O jogo foi um empate!'
+        let playerHtml = document.querySelector('div#mostrador')
+        playerHtml.innerHTML = 'O jogo acabou!'
+        console.log('empate')
+    }
+}
      element.addEventListener('click', fillCells)
 }
 
