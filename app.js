@@ -5,7 +5,7 @@ let playerO = 'O'
 let playTime = playerX
 let hasWinner = false;
 
-let arrCells= ['','','','','','','','','',]
+let arrCells = ['','','','','','','','','',]
 
 updatePlayer()
 
