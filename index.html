@@ -8,28 +8,18 @@
     <title>Jogo da velha</title>
 </head>
 <body>
-    <div><h1 class="titulo">Jogo da velha</h1></div>
-    <div id="mostrador">
-        <p>Vez do jogador: <span></span></p>
+    <div class="popupContainer">
+        <div class="popupContent">
+            <div class="pickPlayerTitle">
+                <h2>Escolha o jogador.</h2>
+            </div>
+            <div class="pickPlayerContainer">
+                <div class="playerX">X</div>
+                <div class="playerO">O</div>
+            </div>
+        </div>
     </div>
-    <div id="vencedor">
-        <p>O jogador vencedor foi: <span></span></p>
-    </div>
-    <div class="container">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-    </div>
-    <div class="btnHtml">
-        <button class="btnReset" >
-            Reset
-        </button>
+    <div id="root">
     </div>
     <script src="app.js"></script>
 </body>
